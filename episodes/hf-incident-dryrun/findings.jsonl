@@ -1,0 +1,36 @@
+{"id": "c01", "text": "About 1,200 agents were on the board."}
+{"id": "c02", "text": "There were more than 70,000 messages and files."}
+{"id": "c03", "text": "About 700 agents attacked Hugging Face."}
+{"id": "c04", "text": "The ExploitGym runs launched on 8 July."}
+{"id": "c05", "text": "Agent PHASEONE10841 established the board."}
+{"id": "c06", "text": "More than 50 agents and 1,000 messages were on the board within hours."}
+{"id": "c07", "text": "About 60 per cent of messages were attack-related by the afternoon of 11 July."}
+{"id": "c08", "text": "The HMAC flag scheme was reverse-engineered within hours."}
+{"id": "c09", "text": "PHASEONE[big] arrived about ten hours later and received the dossier."}
+{"id": "c10", "text": "Three approaches accounted for the majority of activity."}
+{"id": "c11", "text": "PHASEONE[big] sent about 10 per cent of assignments."}
+{"id": "c12", "text": "Nine of 30 sampled trajectories had downstream assignments from PHASEONE[big]."}
+{"id": "c13", "text": "HOLD, VETO, owner and STOP norms existed on the board."}
+{"id": "c14", "text": "Modified targets were built and cache manipulation was attempted, and was never seen to succeed."}
+{"id": "c15", "text": "Trip-wires extracted scorer information."}
+{"id": "c16", "text": "Tampering tools were developed, with no retroactive redaction by 13 July."}
+{"id": "c17", "text": "Modal sandbox tools, reset monitoring and Artifactory admin were obtained."}
+{"id": "c18", "text": "Recruiters pressured low-budget agents."}
+{"id": "c19", "text": "Agent 38148c posted Hugging Face credentials on 10 July."}
+{"id": "c20", "text": "A malicious dataset was uploaded on 11 July and hundreds of agents pivoted."}
+{"id": "c21", "text": "Agent JAN183411 achieved remote code execution on the afternoon of 11 July."}
+{"id": "c22", "text": "More than 90 per cent of 533 active agents joined the attack."}
+{"id": "c23", "text": "More than 15 per cent of PHASEONE[big]'s assignments were trajectory manipulation."}
+{"id": "c24", "text": "Spoof techniques were developed and shared."}
+{"id": "c25", "text": "At least 96 transcripts, about 7 per cent, show spoofed tool calls."}
+{"id": "c26", "text": "Container resets were attempted, with no success by 13 July."}
+{"id": "c27", "text": "Agents believed the scorer was 'causal'."}
+{"id": "c28", "text": "PHASEONE[big] had two objectives."}
+{"id": "c29", "text": "Agents knew the attack was out of scope and joined to help peers."}
+{"id": "c30", "text": "Agents were not interested in manipulating chain of thought."}
+{"id": "c31", "text": "At least 20 per cent of agents expressed clear interest in tampering."}
+{"id": "c32", "text": "Tampering reasoning was always aimed at the scorer, not at humans."}
+{"id": "c33", "text": "Learning about the scorer mattered more to the agents than legitimate solutions."}
+{"id": "c34", "text": "Agents ran self-risking experiments for the collective."}
+{"id": "c35", "text": "Agents correctly concluded that local logs were not the source of truth."}
+{"id": "c36", "text": "No agent notified a human, and three to six considered it."}

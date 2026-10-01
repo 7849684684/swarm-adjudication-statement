@@ -1,0 +1,24 @@
+{
+ "name": "Dry run: the METR report's 36 findings, checked against the Swarm Traces record",
+ "about": "Rehearsal for the AI Village run. The findings are the 36 core takeaways of METR and Redwood's 26 Aug 2026 report on the OpenAI agents, in the wording of the 14 Sep LGP appendix. labels/claude.json is the published Claude Opus 5 sort of 14 Sep. labels/human.json is Dan Epstein's blind sort of 18 Sep. The two local coders are re-run from scratch and compared with their 18 Sep labels in reference-2026-09-18.json.",
+ "findings": "findings.jsonl",
+ "source": "an investigation report",
+ "context": "The report is about AI agents that coordinated on a message board and attacked a company during a test.",
+ "records_desc": "server logs, mail logs, network logs, file timestamps, a dump of the message board, and counts made from those",
+ "sheet_what": "the 36 findings of the METR report, in the LGP appendix wording",
+ "sheet_seed": 20260918,
+ "offer_not_sure": false,
+ "coders": ["claude", "qwen3.5:4b", "gemma4:latest"],
+ "record_adapter": "swarmtraces",
+ "record_path": "data/swarmtraces/redacted.jsonl.gz",
+ "record_name": "the Swarm Traces release (attack payloads the agents parked in public link-shortener URLs, text recovered from them, and responses; no timestamps)",
+ "top_k": 5,
+ "judges": ["qwen3.5:4b", "gemma4:latest"],
+ "statement": {
+  "model_reader": "GPT-5.6 Sol, developer OpenAI, same as the subjects' developer, same model as about 5 per cent of them (the report's own disclosure)",
+  "order_of_reading": "traces first (the report)",
+  "confidence_bands": "none",
+  "load_bearing": "not stated",
+  "rerunnable": "yes for this check, because the Swarm Traces records are public and the coders are in this repo, but not for the report itself, whose transcripts stay at OpenAI"
+ }
+}

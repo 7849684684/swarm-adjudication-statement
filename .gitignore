@@ -1,0 +1,6 @@
+# Dataset copies, caches and raw model output stay local. The AI Village terms forbid
+# redistribution, and Swarm Traces records can hold credentials the redaction missed.
+data/
+__pycache__/
+*.pyc
+.claude/
