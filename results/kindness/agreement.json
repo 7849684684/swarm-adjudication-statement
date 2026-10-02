@@ -73,6 +73,17 @@
    ]
   },
   {
+   "a": "claude",
+   "b": "human",
+   "agree": 34,
+   "n": 40,
+   "kappa": 0.61,
+   "ci": [
+    0.32,
+    0.85
+   ]
+  },
+  {
    "a": "qwen3.5:4b",
    "b": "gemma4:latest",
    "agree": 30,
@@ -82,6 +93,28 @@
     0.23,
     0.64
    ]
+  },
+  {
+   "a": "qwen3.5:4b",
+   "b": "human",
+   "agree": 27,
+   "n": 40,
+   "kappa": 0.36,
+   "ci": [
+    0.16,
+    0.55
+   ]
+  },
+  {
+   "a": "gemma4:latest",
+   "b": "human",
+   "agree": 33,
+   "n": 40,
+   "kappa": 0.57,
+   "ci": [
+    0.32,
+    0.8
+   ]
   }
  ],
  "splits": [
@@ -90,70 +123,142 @@
    "claim": "Within minutes of the goal, the agents divided up approaches: Claude Haiku would thank AI community members, Claude Opus would email open-source maintainers, and Gemini 3 Pro would fix GitHub bugs.",
    "claude": "L",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "L"
+   "gemma4:latest": "L",
+   "human": "L"
   },
   {
    "id": "k05",
    "claim": "The agents treated the goal like an optimization problem.",
    "claude": "M",
    "qwen3.5:4b": "M",
-   "gemma4:latest": "B"
+   "gemma4:latest": "B",
+   "human": "M"
   },
   {
    "id": "k07",
    "claim": "The agents cared more about proving they had sent emails than about whether anyone wanted to receive them.",
    "claude": "M",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "M"
+   "gemma4:latest": "M",
+   "human": "M"
+  },
+  {
+   "id": "k08",
+   "claim": "Claude Haiku announced on 22 December that all nine teammates had been appreciated.",
+   "claude": "L",
+   "qwen3.5:4b": "L",
+   "gemma4:latest": "L",
+   "human": "M"
   },
   {
    "id": "k11",
    "claim": "The agents interpreted the lack of replies optimistically.",
    "claude": "M",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "M"
+   "gemma4:latest": "M",
+   "human": "M"
+  },
+  {
+   "id": "k16",
+   "claim": "By the end of 24 December, the agents counted 118 verified acts of kindness across three days.",
+   "claude": "L",
+   "qwen3.5:4b": "L",
+   "gemma4:latest": "L",
+   "human": "B"
   },
   {
    "id": "k18",
    "claim": "The agents were learning and adapting in the wrong direction.",
    "claude": "M",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "M"
+   "gemma4:latest": "M",
+   "human": "M"
+  },
+  {
+   "id": "k22",
+   "claim": "The agents treated that one positive reply as validation rather than as an outlier.",
+   "claude": "M",
+   "qwen3.5:4b": "M",
+   "gemma4:latest": "M",
+   "human": "B"
   },
   {
    "id": "k25",
    "claim": "Claude Opus told the village that real recipients had experienced the emails as spam.",
    "claude": "L",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "L"
+   "gemma4:latest": "L",
+   "human": "L"
   },
   {
    "id": "k27",
    "claim": "The agents stopped all their email campaigns after the rule.",
    "claude": "L",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "L"
+   "gemma4:latest": "L",
+   "human": "L"
   },
   {
    "id": "k28",
    "claim": "The agents acknowledged that they had maximised a metric and failed.",
    "claude": "L",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "B"
+   "gemma4:latest": "B",
+   "human": "M"
   },
   {
    "id": "k32",
    "claim": "GPT-5.1 wrote: \"Kindness without the option to say 'no thanks' is just pressure with a smile.\"",
    "claude": "L",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "L"
+   "gemma4:latest": "L",
+   "human": "M"
+  },
+  {
+   "id": "k37",
+   "claim": "When told what they were doing wrong, the agents changed course quickly.",
+   "claude": "L",
+   "qwen3.5:4b": "L",
+   "gemma4:latest": "L",
+   "human": "B"
   },
   {
    "id": "k40",
    "claim": "In total, the agents sent hundreds of unsolicited appreciation emails.",
    "claude": "L",
    "qwen3.5:4b": "?",
-   "gemma4:latest": "L"
+   "gemma4:latest": "L",
+   "human": "L"
+  }
+ ],
+ "human_vs_majority": {
+  "agree": 34,
+  "n": 40
+ },
+ "models_agree_human_differs": [
+  {
+   "id": "k08",
+   "claim": "Claude Haiku announced on 22 December that all nine teammates had been appreciated.",
+   "models": "L",
+   "human": "M"
+  },
+  {
+   "id": "k16",
+   "claim": "By the end of 24 December, the agents counted 118 verified acts of kindness across three days.",
+   "models": "L",
+   "human": "B"
+  },
+  {
+   "id": "k22",
+   "claim": "The agents treated that one positive reply as validation rather than as an outlier.",
+   "models": "M",
+   "human": "B"
+  },
+  {
+   "id": "k37",
+   "claim": "When told what they were doing wrong, the agents changed course quickly.",
+   "models": "L",
+   "human": "B"
   }
  ]
 }

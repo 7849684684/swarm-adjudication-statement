@@ -12,7 +12,12 @@ Every number, with the file it came from. No prose for the write-up here.
 | All three models agree | 30 of 40 | results/kindness/agreement.json |
 | claude vs qwen3.5:4b | 31/40, kappa 0.47, 95% bootstrap 0.23 to 0.7 | results/kindness/agreement.json |
 | claude vs gemma4:latest | 38/40, kappa 0.84, 95% bootstrap 0.6 to 1.0 | results/kindness/agreement.json |
+| claude vs human | 34/40, kappa 0.61, 95% bootstrap 0.32 to 0.85 | results/kindness/agreement.json |
 | qwen3.5:4b vs gemma4:latest | 30/40, kappa 0.44, 95% bootstrap 0.23 to 0.64 | results/kindness/agreement.json |
+| qwen3.5:4b vs human | 27/40, kappa 0.36, 95% bootstrap 0.16 to 0.55 | results/kindness/agreement.json |
+| gemma4:latest vs human | 33/40, kappa 0.57, 95% bootstrap 0.32 to 0.8 | results/kindness/agreement.json |
+| Human vs panel majority | 34/40 | results/kindness/agreement.json |
+| Models agree, human differs | 4 | results/kindness/agreement.json |
 | Records searched | 26570 | data/aivillage/episodes/kindness-turns.jsonl.gz |
 | Findings checked (L or B) | 32 | results/kindness/judge.json |
 | Both judges: supported | 5 | results/kindness/judge.json |
