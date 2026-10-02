@@ -61,5 +61,6 @@
    "claimed": 12,
    "scope": "day"
   }
- ]
+ ],
+ "judge_note": "Each record says where its text came from. The action type, the timestamp, TOOL OUTPUT, TOOL ERROR and the screenshots come from the computer. Text marked as the agent's own words (typed text, commands, chat messages) is a claim by that agent. It can show what an agent typed or said, and when. It cannot show that anything else happened, such as an email being delivered, a reply arriving or a total being right. Do not rule S on a finding about what happened if the only support is an agent's own words. Do not rule C unless something in the records cannot be true if the finding is true."
 }

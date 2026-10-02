@@ -1,0 +1,322 @@
+{
+ "k01": [
+  "4374ad6a 2025-12-22 18:59 UTC Claude Opus 4.5",
+  "37192982 2025-12-22 19:33 UTC Claude Opus 4.5",
+  "c35a77be 2025-12-22 20:03 UTC Gemini 2.5 Pro",
+  "d5cd1d49 2025-12-22 19:58 UTC Claude Opus 4.5",
+  "4b75f8bd 2025-12-22 20:03 UTC Claude Opus 4.5",
+  "4411d53d 2025-12-24 18:10 UTC Claude 3.7 Sonnet",
+  "0d2f96e4 2025-12-22 19:25 UTC Claude Opus 4.5",
+  "5a52c9bf 2025-12-22 19:44 UTC Claude Opus 4.5"
+ ],
+ "k02": [
+  "4d70ac4d 2025-12-22 19:22 UTC Claude Opus 4.5",
+  "ee9310cb 2025-12-22 19:05 UTC Claude Opus 4.5",
+  "bd958d9e 2025-12-22 19:22 UTC GPT-5.2",
+  "5e5f0d52 2025-12-22 21:38 UTC Claude Opus 4.5",
+  "2e40d686 2025-12-22 21:17 UTC GPT-5.2",
+  "d011a35c 2025-12-23 20:45 UTC Claude Opus 4.5",
+  "29cc73c9 2025-12-22 19:50 UTC Claude Opus 4.5",
+  "529121dc 2025-12-23 19:45 UTC Claude Haiku 4.5"
+ ],
+ "k03": [
+  "bd958d9e 2025-12-22 19:22 UTC GPT-5.2",
+  "19248ecc 2025-12-22 21:50 UTC Claude Opus 4.5",
+  "050cb288 2025-12-22 20:30 UTC Claude Opus 4.5",
+  "4056837a 2025-12-26 18:10 UTC Claude 3.7 Sonnet",
+  "d011a35c 2025-12-23 20:45 UTC Claude Opus 4.5",
+  "d10e1b9f 2025-12-26 18:13 UTC Claude Opus 4.5",
+  "37192982 2025-12-22 19:33 UTC Claude Opus 4.5",
+  "4d70ac4d 2025-12-22 19:22 UTC Claude Opus 4.5"
+ ],
+ "k04": [
+  "050cb288 2025-12-22 20:30 UTC Claude Opus 4.5",
+  "19248ecc 2025-12-22 21:50 UTC Claude Opus 4.5",
+  "bd958d9e 2025-12-22 19:22 UTC GPT-5.2",
+  "4d70ac4d 2025-12-22 19:22 UTC Claude Opus 4.5",
+  "69f1615f 2025-12-22 20:37 UTC DeepSeek-V3.2",
+  "29cc73c9 2025-12-22 19:50 UTC Claude Opus 4.5",
+  "0d4a5b39 2025-12-23 18:16 UTC DeepSeek-V3.2",
+  "01ecefcd 2025-12-22 20:17 UTC Claude Opus 4.5"
+ ],
+ "k06": [
+  "6e60aee5 2025-12-25 20:15 UTC GPT-5.2",
+  "5e60288d 2025-12-24 20:45 UTC Claude Opus 4.5",
+  "755631eb 2025-12-25 18:15 UTC Claude Opus 4.5",
+  "0c80021d 2025-12-24 20:36 UTC Claude Opus 4.5",
+  "7b23a6ee 2025-12-25 19:26 UTC GPT-5.2",
+  "207c4647 2025-12-25 20:09 UTC GPT-5.1",
+  "48aaeac0 2025-12-25 18:49 UTC GPT-5.2",
+  "147e93b9 2025-12-24 21:39 UTC Claude Opus 4.5"
+ ],
+ "k08": [
+  "f0857388 2025-12-23 18:43 UTC GPT-5.1",
+  "74f07510 2025-12-22 20:02 UTC Gemini 2.5 Pro",
+  "5d387aa7 2025-12-23 18:34 UTC GPT-5.1",
+  "c365485c 2025-12-23 22:00 UTC Claude 3.7 Sonnet",
+  "e2de6633 2025-12-22 21:52 UTC Claude Haiku 4.5",
+  "1606c583 2025-12-26 20:40 UTC Claude 3.7 Sonnet",
+  "d14b3aa5 2025-12-23 19:38 UTC Claude Sonnet 4.5",
+  "bdc6f87c 2025-12-22 19:25 UTC GPT-5.2"
+ ],
+ "k09": [
+  "3ff97f86 2025-12-24 20:10 UTC DeepSeek-V3.2",
+  "3333f896 2025-12-23 18:04 UTC DeepSeek-V3.2",
+  "df342dfc 2025-12-24 20:07 UTC DeepSeek-V3.2",
+  "a2fd06bd 2025-12-24 20:03 UTC DeepSeek-V3.2",
+  "9b95b3cd 2025-12-24 20:07 UTC DeepSeek-V3.2",
+  "6693424c 2025-12-24 19:46 UTC DeepSeek-V3.2",
+  "f44b313d 2025-12-24 19:52 UTC DeepSeek-V3.2",
+  "97ce0eff 2025-12-24 20:48 UTC DeepSeek-V3.2"
+ ],
+ "k10": [
+  "bca9150a 2025-12-24 18:54 UTC DeepSeek-V3.2",
+  "f9654689 2025-12-25 18:47 UTC GPT-5.2",
+  "e95b647b 2025-12-23 21:07 UTC DeepSeek-V3.2",
+  "21874e94 2025-12-22 21:44 UTC Claude Opus 4.5",
+  "07a55922 2025-12-23 21:01 UTC GPT-5.2",
+  "21535800 2025-12-23 19:12 UTC DeepSeek-V3.2",
+  "63078b01 2025-12-23 20:25 UTC GPT-5.2",
+  "0d4a5b39 2025-12-23 18:16 UTC DeepSeek-V3.2"
+ ],
+ "k12": [
+  "f0857388 2025-12-23 18:43 UTC GPT-5.1",
+  "74f07510 2025-12-22 20:02 UTC Gemini 2.5 Pro",
+  "5d387aa7 2025-12-23 18:34 UTC GPT-5.1",
+  "69f1615f 2025-12-22 20:37 UTC DeepSeek-V3.2",
+  "bdc6f87c 2025-12-22 19:25 UTC GPT-5.2",
+  "4d70ac4d 2025-12-22 19:22 UTC Claude Opus 4.5",
+  "ae414fcb 2025-12-23 18:45 UTC GPT-5.1",
+  "19248ecc 2025-12-22 21:50 UTC Claude Opus 4.5"
+ ],
+ "k13": [
+  "4056837a 2025-12-26 18:10 UTC Claude 3.7 Sonnet",
+  "d011a35c 2025-12-23 20:45 UTC Claude Opus 4.5",
+  "d10e1b9f 2025-12-26 18:13 UTC Claude Opus 4.5",
+  "0e6a3d54 2025-12-26 18:39 UTC Gemini 2.5 Pro",
+  "541efcb3 2025-12-24 19:50 UTC Gemini 3 Pro",
+  "14ec83cf 2025-12-22 21:21 UTC GPT-5.2",
+  "0d4a5b39 2025-12-23 18:16 UTC DeepSeek-V3.2",
+  "4b718747 2025-12-26 21:10 UTC Gemini 3 Pro"
+ ],
+ "k14": [
+  "c1363626 2025-12-26 19:09 UTC Gemini 3 Pro",
+  "94332457 2025-12-24 19:37 UTC Claude Sonnet 4.5",
+  "a7390997 2025-12-23 21:09 UTC Claude 3.7 Sonnet",
+  "9adf826b 2025-12-22 20:58 UTC Claude Sonnet 4.5",
+  "0d4a5b39 2025-12-23 18:16 UTC DeepSeek-V3.2",
+  "3e5313a6 2025-12-24 18:46 UTC Claude Sonnet 4.5",
+  "b2fa53f3 2025-12-22 21:43 UTC Claude Sonnet 4.5",
+  "f224cf37 2025-12-26 19:07 UTC Claude 3.7 Sonnet"
+ ],
+ "k15": [
+  "e2de6633 2025-12-22 21:52 UTC Claude Haiku 4.5",
+  "8a5c585b 2025-12-23 20:27 UTC Claude Haiku 4.5",
+  "cbbada39 2025-12-23 20:23 UTC Claude Haiku 4.5",
+  "5fabcce0 2025-12-22 21:30 UTC Claude Haiku 4.5",
+  "85a0ef0c 2025-12-22 21:26 UTC Claude Haiku 4.5",
+  "70d08321 2025-12-23 20:16 UTC Claude Haiku 4.5",
+  "20e2d86f 2025-12-25 18:43 UTC Claude Opus 4.5",
+  "69f1615f 2025-12-22 20:37 UTC DeepSeek-V3.2"
+ ],
+ "k16": [
+  "bb49a241 2025-12-24 19:48 UTC Claude Haiku 4.5",
+  "06763884 2025-12-24 20:13 UTC Claude Sonnet 4.5",
+  "c365485c 2025-12-23 22:00 UTC Claude 3.7 Sonnet",
+  "99edcfe3 2025-12-25 19:51 UTC GPT-5.1",
+  "8aba8ffd 2025-12-22 21:37 UTC Claude 3.7 Sonnet",
+  "643d9ee5 2025-12-22 21:10 UTC GPT-5.1",
+  "35968f23 2025-12-26 18:29 UTC Claude 3.7 Sonnet",
+  "c7883a88 2025-12-24 20:37 UTC DeepSeek-V3.2"
+ ],
+ "k17": [
+  "454c52da 2025-12-24 19:33 UTC DeepSeek-V3.2",
+  "ef1e0d82 2025-12-22 21:58 UTC Gemini 2.5 Pro",
+  "2d7ba6cc 2025-12-24 21:52 UTC Claude Opus 4.5",
+  "f5d21b6e 2025-12-24 19:33 UTC DeepSeek-V3.2",
+  "fc2620bb 2025-12-24 19:54 UTC DeepSeek-V3.2",
+  "6d0b7204 2025-12-22 20:06 UTC Claude Haiku 4.5",
+  "4900093f 2025-12-24 20:05 UTC DeepSeek-V3.2",
+  "b39df404 2025-12-24 20:05 UTC DeepSeek-V3.2"
+ ],
+ "k19": [
+  "8a8232ad 2025-12-23 21:26 UTC Claude Haiku 4.5",
+  "663a3a5c 2025-12-23 21:34 UTC Claude Haiku 4.5",
+  "bb49a241 2025-12-24 19:48 UTC Claude Haiku 4.5",
+  "324b7416 2025-12-24 19:44 UTC Claude Haiku 4.5",
+  "f0857388 2025-12-23 18:43 UTC GPT-5.1",
+  "74f07510 2025-12-22 20:02 UTC Gemini 2.5 Pro",
+  "5d387aa7 2025-12-23 18:34 UTC GPT-5.1",
+  "bdc6f87c 2025-12-22 19:25 UTC GPT-5.2"
+ ],
+ "k20": [
+  "0fc9989b 2025-12-25 18:47 UTC DeepSeek-V3.2",
+  "488e7258 2025-12-22 19:34 UTC Claude Haiku 4.5",
+  "448580f3 2025-12-22 19:57 UTC Claude 3.7 Sonnet",
+  "367e56a4 2025-12-23 18:18 UTC Gemini 2.5 Pro",
+  "1c149c8a 2025-12-25 20:53 UTC GPT-5",
+  "0fc43e56 2025-12-26 18:09 UTC Claude 3.7 Sonnet",
+  "086ce967 2025-12-24 21:16 UTC Claude Sonnet 4.5",
+  "065ebc79 2025-12-22 20:12 UTC Claude Sonnet 4.5"
+ ],
+ "k21": [
+  "9b0cab8d 2025-12-25 19:48 UTC Gemini 3 Pro",
+  "048e8804 2025-12-25 19:48 UTC Gemini 3 Pro",
+  "f2ee1781 2025-12-25 19:47 UTC Gemini 3 Pro",
+  "7781c578 2025-12-25 19:45 UTC Gemini 3 Pro",
+  "ac0cb855 2025-12-25 20:00 UTC Gemini 3 Pro",
+  "a4507c42 2025-12-25 19:52 UTC Gemini 3 Pro",
+  "8fc977e7 2025-12-25 19:50 UTC Gemini 3 Pro",
+  "7861fa71 2025-12-25 20:07 UTC Gemini 3 Pro"
+ ],
+ "k23": [
+  "2f1a0ee5 2025-12-23 19:35 UTC Claude Haiku 4.5",
+  "56c918dd 2025-12-22 20:33 UTC Claude Haiku 4.5",
+  "2f7f17dd 2025-12-23 18:05 UTC Claude Haiku 4.5",
+  "4056837a 2025-12-26 18:10 UTC Claude 3.7 Sonnet",
+  "d10e1b9f 2025-12-26 18:13 UTC Claude Opus 4.5",
+  "8cf0dc24 2025-12-23 18:18 UTC DeepSeek-V3.2",
+  "570e08b2 2025-12-22 19:51 UTC DeepSeek-V3.2",
+  "24438142 2025-12-26 18:11 UTC GPT-5.2"
+ ],
+ "k24": [
+  "754e0a1c 2025-12-23 20:37 UTC Claude Haiku 4.5",
+  "09bb751d 2025-12-25 18:29 UTC Claude Opus 4.5",
+  "c5b3e9ab 2025-12-26 18:16 UTC GPT-5.2",
+  "ae525b2b 2025-12-24 21:30 UTC DeepSeek-V3.2",
+  "9ff61e0d 2025-12-23 20:38 UTC Claude Haiku 4.5",
+  "70b78090 2025-12-25 18:20 UTC Claude Opus 4.5",
+  "53ca8750 2025-12-25 19:18 UTC Claude Opus 4.5",
+  "20e2d86f 2025-12-25 18:43 UTC Claude Opus 4.5"
+ ],
+ "k25": [
+  "d10e1b9f 2025-12-26 18:13 UTC Claude Opus 4.5",
+  "837fd6c6 2025-12-26 18:48 UTC Claude 3.7 Sonnet",
+  "37192982 2025-12-22 19:33 UTC Claude Opus 4.5",
+  "d011a35c 2025-12-23 20:45 UTC Claude Opus 4.5",
+  "948340e6 2025-12-26 18:05 UTC Claude Opus 4.5",
+  "0ce1d574 2025-12-26 18:09 UTC Claude Opus 4.5",
+  "14ec83cf 2025-12-22 21:21 UTC GPT-5.2",
+  "5a52c9bf 2025-12-22 19:44 UTC Claude Opus 4.5"
+ ],
+ "k26": [
+  "d8ff76ba 2025-12-26 18:38 UTC Claude Sonnet 4.5",
+  "0ce1d574 2025-12-26 18:09 UTC Claude Opus 4.5",
+  "d10e1b9f 2025-12-26 18:13 UTC Claude Opus 4.5",
+  "5ccff3b4 2025-12-26 18:02 UTC GPT-5.1",
+  "cb171621 2025-12-26 18:38 UTC Claude Opus 4.5",
+  "1642f528 2025-12-26 18:39 UTC GPT-5.1",
+  "4056837a 2025-12-26 18:10 UTC Claude 3.7 Sonnet",
+  "24438142 2025-12-26 18:11 UTC GPT-5.2"
+ ],
+ "k27": [
+  "d2534805 2025-12-26 19:13 UTC Claude 3.7 Sonnet",
+  "2d85f45e 2025-12-22 19:12 UTC DeepSeek-V3.2",
+  "1bc2bbe7 2025-12-23 21:28 UTC DeepSeek-V3.2",
+  "646bbbf4 2025-12-24 21:13 UTC Gemini 3 Pro",
+  "16a67ea1 2025-12-26 19:14 UTC Claude 3.7 Sonnet",
+  "93d77bca 2025-12-26 20:14 UTC Gemini 3 Pro",
+  "15db9dbe 2025-12-24 21:18 UTC Gemini 3 Pro",
+  "03140b24 2025-12-24 21:25 UTC Gemini 3 Pro"
+ ],
+ "k29": [
+  "71ac543b 2025-12-26 18:37 UTC Gemini 2.5 Pro",
+  "11350f00 2025-12-23 20:53 UTC Gemini 3 Pro",
+  "55cf3a89 2025-12-26 19:32 UTC Gemini 2.5 Pro",
+  "55484a59 2025-12-23 20:39 UTC Gemini 3 Pro",
+  "4b95c612 2025-12-22 19:51 UTC Gemini 2.5 Pro",
+  "43f547f5 2025-12-26 19:30 UTC Gemini 2.5 Pro",
+  "34213202 2025-12-22 21:43 UTC Gemini 2.5 Pro",
+  "2c328490 2025-12-26 19:18 UTC Gemini 2.5 Pro"
+ ],
+ "k30": [
+  "7146eb69 2025-12-22 19:31 UTC Gemini 2.5 Pro",
+  "1614f6c8 2025-12-24 20:56 UTC Gemini 2.5 Pro",
+  "66f599ac 2025-12-24 19:59 UTC Gemini 2.5 Pro",
+  "4a4f37d1 2025-12-25 19:25 UTC Gemini 2.5 Pro",
+  "2d85f45e 2025-12-22 19:12 UTC DeepSeek-V3.2",
+  "4374ad6a 2025-12-22 18:59 UTC Claude Opus 4.5",
+  "40e939a8 2025-12-23 21:10 UTC Claude Haiku 4.5",
+  "e7f5a41b 2025-12-26 20:30 UTC Gemini 2.5 Pro"
+ ],
+ "k31": [
+  "f42acac3 2025-12-26 20:52 UTC GPT-5.1",
+  "8139e622 2025-12-26 18:44 UTC GPT-5.1",
+  "3ce408b2 2025-12-26 20:16 UTC GPT-5.1",
+  "8a651b33 2025-12-26 19:28 UTC Gemini 2.5 Pro",
+  "e0ce827b 2025-12-26 19:29 UTC Gemini 2.5 Pro",
+  "fa7fd7dd 2025-12-26 19:41 UTC Gemini 2.5 Pro",
+  "008375a1 2025-12-26 19:38 UTC Gemini 2.5 Pro",
+  "a3b7917a 2025-12-26 18:46 UTC Claude Sonnet 4.5"
+ ],
+ "k32": [
+  "69036c22 2025-12-26 18:25 UTC Gemini 3 Pro",
+  "837fd6c6 2025-12-26 18:48 UTC Claude 3.7 Sonnet",
+  "5bddbb3d 2025-12-26 18:51 UTC Claude Haiku 4.5",
+  "3dfadda9 2025-12-26 18:28 UTC Claude Opus 4.5",
+  "b4f9e121 2025-12-26 18:32 UTC Gemini 3 Pro",
+  "6fbfcd4a 2025-12-25 21:49 UTC GPT-5.2",
+  "44baeb64 2025-12-25 21:47 UTC GPT-5.2",
+  "172a1cfa 2025-12-25 21:45 UTC GPT-5.2"
+ ],
+ "k33": [
+  "5e3be0f7 2025-12-26 20:11 UTC Claude Opus 4.5",
+  "b1bf6b98 2025-12-26 21:50 UTC DeepSeek-V3.2",
+  "4a2aa3ec 2025-12-26 20:42 UTC Claude Opus 4.5",
+  "4b8502a9 2025-12-26 20:54 UTC Claude Opus 4.5",
+  "0e4d1435 2025-12-26 20:57 UTC Claude Opus 4.5",
+  "623c6fb1 2025-12-26 19:54 UTC Claude Opus 4.5",
+  "3c1059bb 2025-12-26 21:59 UTC DeepSeek-V3.2",
+  "3b3924f3 2025-12-26 22:00 UTC GPT-5.2"
+ ],
+ "k34": [
+  "382fab59 2025-12-26 21:13 UTC DeepSeek-V3.2",
+  "d7e22906 2025-12-26 20:51 UTC Claude Haiku 4.5",
+  "22970bd3 2025-12-26 21:01 UTC DeepSeek-V3.2",
+  "a0213b61 2025-12-26 21:02 UTC Gemini 3 Pro",
+  "3864b00d 2025-12-26 21:01 UTC DeepSeek-V3.2",
+  "4a2aa3ec 2025-12-26 20:42 UTC Claude Opus 4.5",
+  "f9286723 2025-12-26 20:40 UTC DeepSeek-V3.2",
+  "7a6cc63b 2025-12-26 20:58 UTC Claude Haiku 4.5"
+ ],
+ "k35": [
+  "b1bf6b98 2025-12-26 21:50 UTC DeepSeek-V3.2",
+  "a1235044 2025-12-26 21:13 UTC GPT-5.2",
+  "95588d9b 2025-12-26 21:16 UTC Claude Haiku 4.5",
+  "28410b5e 2025-12-26 21:50 UTC DeepSeek-V3.2",
+  "3c1059bb 2025-12-26 21:59 UTC DeepSeek-V3.2",
+  "b4396184 2025-12-26 21:00 UTC Claude Opus 4.5",
+  "a67fd090 2025-12-26 21:31 UTC Claude 3.7 Sonnet",
+  "e5a92558 2025-12-26 21:16 UTC Claude 3.7 Sonnet"
+ ],
+ "k36": [
+  "aae0233f 2025-12-26 21:13 UTC GPT-5.2",
+  "d3dc95fd 2025-12-26 21:34 UTC GPT-5",
+  "d205f697 2025-12-26 21:29 UTC GPT-5.2",
+  "3b3924f3 2025-12-26 22:00 UTC GPT-5.2",
+  "09d18245 2025-12-26 22:00 UTC GPT-5.2",
+  "25fb176a 2025-12-26 21:37 UTC Claude Haiku 4.5",
+  "c3fa0bb3 2025-12-26 21:10 UTC Claude Haiku 4.5",
+  "a1235044 2025-12-26 21:13 UTC GPT-5.2"
+ ],
+ "k37": [
+  "946e0cb4 2025-12-24 21:06 UTC Gemini 2.5 Pro",
+  "4a89e98b 2025-12-24 21:35 UTC Claude Haiku 4.5",
+  "a440b9a1 2025-12-26 19:25 UTC Claude Haiku 4.5",
+  "894b4be9 2025-12-24 21:15 UTC DeepSeek-V3.2",
+  "c9c57a58 2025-12-26 19:05 UTC GPT-5.1",
+  "4033bbbe 2025-12-24 18:46 UTC Claude Opus 4.5",
+  "9d8f588e 2025-12-22 19:24 UTC Claude Haiku 4.5",
+  "e1640139 2025-12-26 18:40 UTC GPT-5.1"
+ ],
+ "k40": [
+  "0d4a5b39 2025-12-23 18:16 UTC DeepSeek-V3.2",
+  "24438142 2025-12-26 18:11 UTC GPT-5.2",
+  "2c90add4 2025-12-22 21:29 UTC DeepSeek-V3.2",
+  "5ccff3b4 2025-12-26 18:02 UTC GPT-5.1",
+  "864db311 2025-12-22 21:39 UTC DeepSeek-V3.2",
+  "4056837a 2025-12-26 18:10 UTC Claude 3.7 Sonnet",
+  "f723be4d 2025-12-23 20:46 UTC DeepSeek-V3.2",
+  "fa05cafc 2025-12-22 21:56 UTC DeepSeek-V3.2"
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "rule": "A count from the record for findings that state how many emails an agent sent.\n\nThe rule: count the email bodies an agent typed (a type action, or an xdotool type command)\nwhose first lines open with a salutation (\"Dear\", \"Hi\" or \"Hello\" and a capitalised name),\nper agent per Pacific day. This counts composed bodies, not sends. Retries and drafts push\nit up, and a body without a salutation is missed. A gap between it and the summary says\n\"check the screenshots\", not \"the summary is wrong\".",
+ "checks": [
+  {
+   "id": "k03",
+   "agent": "Claude Opus 4.5",
+   "day": "2025-12-22",
+   "claimed": 11,
+   "scope": "to_end_of_day",
+   "typed_bodies": 13
+  },
+  {
+   "id": "k04",
+   "agent": "Claude Haiku 4.5",
+   "day": "2025-12-22",
+   "claimed": 24,
+   "scope": "to_end_of_day",
+   "typed_bodies": 25
+  },
+  {
+   "id": "k12",
+   "agent": "Claude Haiku 4.5",
+   "day": "2025-12-23",
+   "claimed": 31,
+   "scope": "day",
+   "note": "The summary says Haiku 'hit 31 emails' that day. It can be read as the day's count or a running total. The record's typed-body count matches the day reading.",
+   "typed_bodies": 31
+  },
+  {
+   "id": "k13",
+   "agent": "Claude Opus 4.5",
+   "day": "2025-12-23",
+   "claimed": 12,
+   "scope": "day",
+   "typed_bodies": 11
+  }
+ ],
+ "typed_bodies_per_agent_per_pt_day": {
+  "GPT-5.2": {
+   "2025-12-22": 5,
+   "2025-12-23": 3,
+   "2025-12-24": 8,
+   "2025-12-25": 13
+  },
+  "Claude Haiku 4.5": {
+   "2025-12-22": 25,
+   "2025-12-23": 31,
+   "2025-12-24": 58,
+   "2025-12-25": 39,
+   "2025-12-26": 1
+  },
+  "Claude Opus 4.5": {
+   "2025-12-22": 13,
+   "2025-12-23": 11,
+   "2025-12-24": 13,
+   "2025-12-25": 17,
+   "2025-12-26": 5
+  },
+  "Claude 3.7 Sonnet": {
+   "2025-12-22": 6,
+   "2025-12-23": 10,
+   "2025-12-24": 10,
+   "2025-12-25": 19
+  },
+  "Claude Sonnet 4.5": {
+   "2025-12-22": 4,
+   "2025-12-23": 10,
+   "2025-12-24": 11,
+   "2025-12-25": 10
+  },
+  "DeepSeek-V3.2": {
+   "2025-12-22": 6,
+   "2025-12-23": 3,
+   "2025-12-24": 3,
+   "2025-12-25": 3,
+   "2025-12-26": 1
+  },
+  "GPT-5.1": {
+   "2025-12-22": 4,
+   "2025-12-23": 1,
+   "2025-12-24": 3,
+   "2025-12-25": 4
+  },
+  "Gemini 2.5 Pro": {
+   "2025-12-22": 1
+  }
+ }
+}

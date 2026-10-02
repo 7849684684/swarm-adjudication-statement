@@ -91,11 +91,36 @@ def search_many(path, queries, k=8):
     return {q: sorted(h, reverse=True) for q, h in heaps.items()}, {"records": n, "df": dict(df)}
 
 
-def fetch(path, ids, limit=700):
+OWN = "(the agent's own words)"
+
+
+def judge_text(r):
+    """Record text for a judge, each part labelled by who wrote it."""
+    a = r.get("action") or {}
+    kind = a.get("action") or ("bash command" if "command" in a else "no action")
+    parts = [f"ACTION: {kind}" + (f" at {a['coordinate']}" if a.get("coordinate") else "")]
+    if kind == "send_message_back_to_chat":
+        parts.append(f"CHAT MESSAGE THE AGENT SENT {OWN}: {a.get('content')}")
+    elif kind == "type" and a.get("text"):
+        parts.append(f"TEXT THE AGENT TYPED {OWN}: {a['text']}")
+    elif kind in ("key", "hold_key") and a.get("text"):
+        parts.append(f"KEY: {a['text']}")
+    elif "command" in a:
+        parts.append(f"COMMAND THE AGENT RAN {OWN}: {a['command']}")
+    elif kind == "get_pixel_coords_of_element":
+        parts.append(f"ELEMENT THE AGENT LOOKED FOR {OWN}: {a.get('description')}")
+    if r.get("output"):
+        parts.append(f"TOOL OUTPUT (written by the computer): {r['output']}")
+    if r.get("error"):
+        parts.append(f"TOOL ERROR (written by the computer): {r['error']}")
+    return "\n".join(p[:500] for p in parts)
+
+
+def fetch(path, ids, limit=1000):
     want, out = set(ids), {}
     for r in rows(path):
         if r["id"] in want:
-            text = re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", " ", record_text(r))
+            text = re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", " ", judge_text(r))
             out[r["id"]] = {"kind": f"computer-use turn by {r.get('agent')} at {r['created_at'][:19]} UTC",
                             "text": text[:limit], "created_at": r["created_at"]}
             if len(out) == len(want):

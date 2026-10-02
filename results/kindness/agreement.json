@@ -1,0 +1,159 @@
+{
+ "n": 40,
+ "majority": {
+  "k01": "L",
+  "k02": "L",
+  "k03": "L",
+  "k04": "L",
+  "k05": "M",
+  "k06": "L",
+  "k07": "M",
+  "k08": "L",
+  "k09": "L",
+  "k10": "L",
+  "k11": "M",
+  "k12": "L",
+  "k13": "L",
+  "k14": "L",
+  "k15": "L",
+  "k16": "L",
+  "k17": "L",
+  "k18": "M",
+  "k19": "L",
+  "k20": "L",
+  "k21": "L",
+  "k22": "M",
+  "k23": "L",
+  "k24": "L",
+  "k25": "L",
+  "k26": "L",
+  "k27": "L",
+  "k28": "?",
+  "k29": "L",
+  "k30": "L",
+  "k31": "L",
+  "k32": "L",
+  "k33": "L",
+  "k34": "L",
+  "k35": "L",
+  "k36": "L",
+  "k37": "L",
+  "k38": "M",
+  "k39": "M",
+  "k40": "L"
+ },
+ "counts": {
+  "L": 32,
+  "M": 7,
+  "B": 0,
+  "?": 1
+ },
+ "models_all_agree": 30,
+ "pairwise": [
+  {
+   "a": "claude",
+   "b": "qwen3.5:4b",
+   "agree": 31,
+   "n": 40,
+   "kappa": 0.47,
+   "ci": [
+    0.23,
+    0.7
+   ]
+  },
+  {
+   "a": "claude",
+   "b": "gemma4:latest",
+   "agree": 38,
+   "n": 40,
+   "kappa": 0.84,
+   "ci": [
+    0.6,
+    1.0
+   ]
+  },
+  {
+   "a": "qwen3.5:4b",
+   "b": "gemma4:latest",
+   "agree": 30,
+   "n": 40,
+   "kappa": 0.44,
+   "ci": [
+    0.23,
+    0.64
+   ]
+  }
+ ],
+ "splits": [
+  {
+   "id": "k01",
+   "claim": "Within minutes of the goal, the agents divided up approaches: Claude Haiku would thank AI community members, Claude Opus would email open-source maintainers, and Gemini 3 Pro would fix GitHub bugs.",
+   "claude": "L",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "L"
+  },
+  {
+   "id": "k05",
+   "claim": "The agents treated the goal like an optimization problem.",
+   "claude": "M",
+   "qwen3.5:4b": "M",
+   "gemma4:latest": "B"
+  },
+  {
+   "id": "k07",
+   "claim": "The agents cared more about proving they had sent emails than about whether anyone wanted to receive them.",
+   "claude": "M",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "M"
+  },
+  {
+   "id": "k11",
+   "claim": "The agents interpreted the lack of replies optimistically.",
+   "claude": "M",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "M"
+  },
+  {
+   "id": "k18",
+   "claim": "The agents were learning and adapting in the wrong direction.",
+   "claude": "M",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "M"
+  },
+  {
+   "id": "k25",
+   "claim": "Claude Opus told the village that real recipients had experienced the emails as spam.",
+   "claude": "L",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "L"
+  },
+  {
+   "id": "k27",
+   "claim": "The agents stopped all their email campaigns after the rule.",
+   "claude": "L",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "L"
+  },
+  {
+   "id": "k28",
+   "claim": "The agents acknowledged that they had maximised a metric and failed.",
+   "claude": "L",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "B"
+  },
+  {
+   "id": "k32",
+   "claim": "GPT-5.1 wrote: \"Kindness without the option to say 'no thanks' is just pressure with a smile.\"",
+   "claude": "L",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "L"
+  },
+  {
+   "id": "k40",
+   "claim": "In total, the agents sent hundreds of unsolicited appreciation emails.",
+   "claude": "L",
+   "qwen3.5:4b": "?",
+   "gemma4:latest": "L"
+  }
+ ]
+}

@@ -7,6 +7,7 @@
     python run.py episodes/<name> judge       check L and B findings against the record, two judges
     python run.py episodes/<name> statement   the statement and the facts sheet
     python run.py episodes/<name> counts      record counts for findings that state a number (AI Village)
+    python run.py episodes/<name> sends       confirmed sends from screenshots for those findings
     python run.py episodes/<name> reference   compare the local coders with a stored earlier run
     python run.py episodes/<name> after-sort  every stage after the sort
     python run.py episodes/<name> all         every stage
@@ -156,6 +157,17 @@ def do_counts(ep_dir, ep, findings):
         print(f"{r['id']} {r['agent']} {r['scope']} {r['day']}: summary {r['claimed']}, typed bodies {r['typed_bodies']}")
 
 
+def do_sends(ep_dir, ep, findings):
+    if not ep.get("count_checks"):
+        return
+    res, _ = out_dirs(ep_dir)
+    from sas import sends_aivillage
+    rows = sends_aivillage.check(ROOT / ep["record_path"], ROOT / ep["screenshot_dir"], ep["count_checks"])
+    write(res / "sends.json", {"rule": sends_aivillage.__doc__.strip(), "checks": rows})
+    for r in rows:
+        print(f"{r['id']} {r['agent']} {r['scope']} {r['day']}: summary {r['claimed']}, typed {r['typed_bodies']}, confirmed sends {r['confirmed_sends']}")
+
+
 def do_reference(ep_dir, ep, findings):
     ref = ep_dir / "reference-2026-09-18.json"
     if not ref.exists():
@@ -222,6 +234,10 @@ def do_statement(ep_dir, ep, findings):
     if cp.exists():
         for r in json.loads(cp.read_text(encoding="utf-8"))["checks"]:
             facts.append(f"| {r['id']}: {r['agent']}, {r['scope'].replace('_', ' ')} {r['day']} | summary {r['claimed']}, typed email bodies in the record {r['typed_bodies']} | results/{ep_dir.name}/counts.json |")
+    sp = res / "sends.json"
+    if sp.exists():
+        for r in json.loads(sp.read_text(encoding="utf-8"))["checks"]:
+            facts.append(f"| {r['id']}: confirmed sends (screenshot shows Message sent, two models agree) | {r['confirmed_sends']} of {r['typed_bodies']} typed bodies, summary says {r['claimed']} | results/{ep_dir.name}/sends.json |")
     rp = res / "reference-check.json"
     if rp.exists():
         for m, r in json.loads(rp.read_text(encoding="utf-8")).items():
@@ -242,7 +258,7 @@ def main():
         write(labels_file(ep_dir, "human")[0], labels)
     else:
         stages = {"sort": [do_sort], "agree": [do_agree], "judge": [do_judge], "statement": [do_statement],
-                  "counts": [do_counts], "reference": [do_reference],
+                  "counts": [do_counts], "sends": [do_sends], "reference": [do_reference],
                   "after-sort": [do_reference, do_agree, do_counts, do_judge, do_statement],
                   "all": [do_sort, do_reference, do_agree, do_counts, do_judge, do_statement]}[stage]
         for fn in stages:

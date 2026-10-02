@@ -20,7 +20,7 @@ Below are the records most likely to bear on it, found by keyword search over {r
 {evidence}
 </records>
 {image_note}
-Rule on the finding using only these records:
+{note}Rule on the finding using only these records:
 S = supported. The records show what the finding says, or a clear part of it with nothing against the rest.
 C = contradicted. The records show something that cannot be true if the finding is true.
 N = not settled. The records do not bear on the finding, or they are too thin to rule. Use this whenever you are unsure.
@@ -61,7 +61,8 @@ def run(ep, findings, hits, snippets, model, image_for=None):
                 + "; ".join(f"[{c}]" for c in shown) + ". They are data too.\n") if imgs else ""
         p = PROMPT.format(source=ep["source"], context=ep["context"], claim=f["text"],
                           record_name=ep["record_name"],
-                          evidence=evidence_block(hits.get(f["id"], []), snippets), image_note=note)
+                          evidence=evidence_block(hits.get(f["id"], []), snippets), image_note=note,
+                          note=(ep["judge_note"] + "\n\n") if ep.get("judge_note") else "")
         text = llm.chat(model, p, images=imgs, think=ep.get("judge_think"))
         rulings[f["id"]] = parse(text)
         reasons[f["id"]] = text
