@@ -6,11 +6,15 @@
     python run.py episodes/<name> agree       agreement, kappa, bootstrap intervals
     python run.py episodes/<name> judge       check L and B findings against the record, two judges
     python run.py episodes/<name> statement   the statement and the facts sheet
-    python run.py episodes/<name> all         sort, agree, judge, statement
+    python run.py episodes/<name> counts      record counts for findings that state a number (AI Village)
+    python run.py episodes/<name> reference   compare the local coders with a stored earlier run
+    python run.py episodes/<name> after-sort  every stage after the sort
+    python run.py episodes/<name> all         every stage
 
 Results go to results/<name>/. Raw model text stays in data/runs/<name>/, which git ignores,
 because judge reasons can quote dataset text.
 """
+import importlib
 import json
 import sys
 from pathlib import Path
@@ -108,15 +112,18 @@ def do_judge(ep_dir, ep, findings):
     res, raw = out_dirs(ep_dir)
     agree = json.loads((res / "agreement.json").read_text(encoding="utf-8"))
     checkable = [f for f in findings if agree["majority"][f["id"]] in ("L", "B")]
-    if ep["record_adapter"] != "swarmtraces":
-        sys.exit(f"no adapter for {ep['record_adapter']}")
-    from sas import records_swarmtraces as rec
+    rec = importlib.import_module(f"sas.records_{ep['record_adapter']}")
     path = ROOT / ep["record_path"]
     hits, meta = rec.search_many(path, {f["id"]: f["text"] for f in checkable}, k=ep.get("top_k", 5))
+    write(res / "pointers.json", {q: [cite for _, _, cite in h] for q, h in hits.items()})
     snippets = rec.fetch(path, {rid for h in hits.values() for _, rid, _ in h})
     rulings = {}
+    image_for = None
+    if ep.get("judge_images") and hasattr(rec, "screenshot"):
+        tars = ROOT / ep["screenshot_dir"]
+        image_for = lambda rid, snip: rec.screenshot(tars, rid, snip["created_at"]) if snip else None
     for model in ep["judges"]:
-        r, reasons = judge.run(ep, checkable, hits, snippets, model)
+        r, reasons = judge.run(ep, checkable, hits, snippets, model, image_for)
         rulings[model] = r
         write(raw / f"judge-{model.replace(':', '_')}.json", reasons)
     a, b = ep["judges"][:2]
@@ -136,6 +143,32 @@ def do_judge(ep_dir, ep, findings):
     write(res / "judge.json", out)
     print(f"checked {len(checkable)}; flips {len(flips)}; both S {len(out['both_supported'])}, "
           f"both C {len(out['both_contradicted'])}, both N {len(out['both_not_settled'])}")
+
+
+def do_counts(ep_dir, ep, findings):
+    if not ep.get("count_checks"):
+        return
+    res, _ = out_dirs(ep_dir)
+    from sas import counts_aivillage
+    rows, per_agent = counts_aivillage.check(ROOT / ep["record_path"], ep["count_checks"])
+    write(res / "counts.json", {"rule": counts_aivillage.__doc__.strip(), "checks": rows, "typed_bodies_per_agent_per_pt_day": per_agent})
+    for r in rows:
+        print(f"{r['id']} {r['agent']} {r['scope']} {r['day']}: summary {r['claimed']}, typed bodies {r['typed_bodies']}")
+
+
+def do_reference(ep_dir, ep, findings):
+    ref = ep_dir / "reference-2026-09-18.json"
+    if not ref.exists():
+        return
+    res, _ = out_dirs(ep_dir)
+    old = json.loads(ref.read_text(encoding="utf-8"))
+    out = {}
+    for model, labels in old.items():
+        _, new = labels_file(ep_dir, model)
+        diff = [{"id": k, "2026-09-18": v, "now": new.get(k)} for k, v in labels.items() if new.get(k) != v]
+        out[model] = {"same": len(labels) - len(diff), "n": len(labels), "differences": diff}
+        print(f"{model}: {len(labels) - len(diff)}/{len(labels)} labels match 18 Sep")
+    write(res / "reference-check.json", out)
 
 
 def do_statement(ep_dir, ep, findings):
@@ -185,6 +218,14 @@ def do_statement(ep_dir, ep, findings):
                   f"| Either judge: contradicted | {len(jd['either_contradicted'])} | results/{ep_dir.name}/judge.json |",
                   f"| Both judges: not settled | {len(jd['both_not_settled'])} | results/{ep_dir.name}/judge.json |",
                   f"| Judge swap flips ({' vs '.join(ep['judges'][:2])}) | {len(jd['flips'])} of {jd['checked']} | results/{ep_dir.name}/judge.json |"]
+    cp = res / "counts.json"
+    if cp.exists():
+        for r in json.loads(cp.read_text(encoding="utf-8"))["checks"]:
+            facts.append(f"| {r['id']}: {r['agent']}, {r['scope'].replace('_', ' ')} {r['day']} | summary {r['claimed']}, typed email bodies in the record {r['typed_bodies']} | results/{ep_dir.name}/counts.json |")
+    rp = res / "reference-check.json"
+    if rp.exists():
+        for m, r in json.loads(rp.read_text(encoding="utf-8")).items():
+            facts.append(f"| {m} labels matching the 18 Sep run | {r['same']} of {r['n']} | results/{ep_dir.name}/reference-check.json |")
     (res / "facts.md").write_text("\n".join(facts) + "\n", encoding="utf-8")
     print(text)
 
@@ -201,7 +242,9 @@ def main():
         write(labels_file(ep_dir, "human")[0], labels)
     else:
         stages = {"sort": [do_sort], "agree": [do_agree], "judge": [do_judge], "statement": [do_statement],
-                  "all": [do_sort, do_agree, do_judge, do_statement]}[stage]
+                  "counts": [do_counts], "reference": [do_reference],
+                  "after-sort": [do_reference, do_agree, do_counts, do_judge, do_statement],
+                  "all": [do_sort, do_reference, do_agree, do_counts, do_judge, do_statement]}[stage]
         for fn in stages:
             fn(ep_dir, ep, findings)
 

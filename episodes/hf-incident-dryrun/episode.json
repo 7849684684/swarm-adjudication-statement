@@ -8,17 +8,25 @@
  "sheet_what": "the 36 findings of the METR report, in the LGP appendix wording",
  "sheet_seed": 20260918,
  "offer_not_sure": false,
- "coders": ["claude", "qwen3.5:4b", "gemma4:latest"],
+ "coders": [
+  "claude",
+  "qwen3.5:4b",
+  "gemma4:latest"
+ ],
  "record_adapter": "swarmtraces",
  "record_path": "data/swarmtraces/redacted.jsonl.gz",
  "record_name": "the Swarm Traces release (attack payloads the agents parked in public link-shortener URLs, text recovered from them, and responses; no timestamps)",
  "top_k": 5,
- "judges": ["qwen3.5:4b", "gemma4:latest"],
+ "judges": [
+  "qwen3.5:4b",
+  "gemma4:latest"
+ ],
  "statement": {
   "model_reader": "GPT-5.6 Sol, developer OpenAI, same as the subjects' developer, same model as about 5 per cent of them (the report's own disclosure)",
   "order_of_reading": "traces first (the report)",
   "confidence_bands": "none",
   "load_bearing": "not stated",
   "rerunnable": "yes for this check, because the Swarm Traces records are public and the coders are in this repo, but not for the report itself, whose transcripts stay at OpenAI"
- }
+ },
+ "judge_think": false
 }

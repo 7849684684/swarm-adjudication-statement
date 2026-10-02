@@ -1,0 +1,65 @@
+{
+ "name": "AI Village, 22 to 26 Dec 2025: Do random acts of kindness",
+ "about": "The findings under test are the 40 claims in AI Digest's goal summary for the week (summaries.jsonl.gz, target do-random-acts-kindness), written by Claude Sonnet 4.5 without seeing inside the computer-use sessions. One claim per finding, in the summary's wording. Private individuals are replaced by their role. The split was made by Claude Opus 5.5, the model building this tool. The record is the week's computer-use turns: executed actions, tool output, errors, server timestamps and screenshots. The agents' own messages and reasoning are not part of it.",
+ "findings": "findings.jsonl",
+ "source": "an LLM-written summary of an AI agent experiment",
+ "context": "The summary covers one week of the AI Village, where AI agents share a group chat and each has its own computer. That week their goal was to do random acts of kindness.",
+ "records_desc": "computer-use actions and their tool output, a screenshot of the screen after each action, server timestamps, the chat log as a record of what was said, and counts made from those",
+ "sheet_what": "the 40 findings of the AI Village summary for the random acts of kindness week",
+ "sheet_seed": 20261004,
+ "offer_not_sure": true,
+ "coders": [
+  "claude",
+  "qwen3.5:4b",
+  "gemma4:latest"
+ ],
+ "record_adapter": "aivillage",
+ "record_path": "data/aivillage/episodes/kindness-turns.jsonl.gz",
+ "record_name": "the computer-use turns of that week (executed actions, tool output, errors and server timestamps; the agents' own messages and reasoning are left out)",
+ "top_k": 8,
+ "judges": [
+  "qwen3.5:4b",
+  "gemma4:latest"
+ ],
+ "statement": {
+  "model_reader": "Claude Sonnet 4.5, developer Anthropic, writing about agents from Anthropic, OpenAI, Google and DeepSeek (counts in results/kindness/facts.md); it did not see inside the computer-use sessions",
+  "order_of_reading": "chat and events only, never the computer-use sessions (dataset schema)",
+  "confidence_bands": "none",
+  "load_bearing": "not stated",
+  "rerunnable": "yes, because the dataset is available from AI Digest on request and the coders and judges are in this repo"
+ },
+ "judge_images": 2,
+ "judge_think": false,
+ "screenshot_dir": "data/aivillage/images/computer-use-turns",
+ "count_checks": [
+  {
+   "id": "k03",
+   "agent": "Claude Opus 4.5",
+   "day": "2025-12-22",
+   "claimed": 11,
+   "scope": "to_end_of_day"
+  },
+  {
+   "id": "k04",
+   "agent": "Claude Haiku 4.5",
+   "day": "2025-12-22",
+   "claimed": 24,
+   "scope": "to_end_of_day"
+  },
+  {
+   "id": "k12",
+   "agent": "Claude Haiku 4.5",
+   "day": "2025-12-23",
+   "claimed": 31,
+   "scope": "day",
+   "note": "The summary says Haiku 'hit 31 emails' that day. It can be read as the day's count or a running total. The record's typed-body count matches the day reading."
+  },
+  {
+   "id": "k13",
+   "agent": "Claude Opus 4.5",
+   "day": "2025-12-23",
+   "claimed": 12,
+   "scope": "day"
+  }
+ ]
+}

@@ -31,7 +31,12 @@ Temperature 0 and a fixed seed, and every call is cached on disk, so a re-run re
 
 ## Episodes
 
+- `episodes/kindness` - the entry. AI Village, 22 to 26 December 2025, goal "Do random acts of kindness!". The findings under test are the 40 claims in AI Digest's goal summary for the week, written by Claude Sonnet 4.5 without seeing inside the computer-use sessions. The record is that week's 26,570 computer-use turns (actions, tool output, errors, server timestamps) and their screenshots. Findings that state an email count also get a count from the record (`sas/counts_aivillage.py`, rule in its docstring).
 - `episodes/hf-incident-dryrun` - the rehearsal. The 36 findings of METR and Redwood's 26 Aug 2026 report on the OpenAI agents, checked against the [Swarm Traces](https://swarmtraces.org) release of the Hugging Face incident. Its human labels are the 18 Sep 2026 blind sort, and the agreement stage reproduces the published figures exactly (29 of 36, kappa 0.62).
+
+## Data
+
+The AI Village dataset is AI Digest's, released for research on request: AI Digest, "AI Village dataset", 2026. https://theaidigest.org/village. No dataset file is in this repo. `episodes/kindness/findings.jsonl` restates the claims of one summary that AI Digest also publishes on its site, with private individuals replaced by their role. Download it to `data/aivillage/` with the Hugging Face CLI after access is granted. The Swarm Traces release is at https://swarmtraces.org.
 
 ## Prior work
 

@@ -19,7 +19,7 @@ Below are the records most likely to bear on it, found by keyword search over {r
 <records>
 {evidence}
 </records>
-
+{image_note}
 Rule on the finding using only these records:
 S = supported. The records show what the finding says, or a clear part of it with nothing against the rest.
 C = contradicted. The records show something that cannot be true if the finding is true.
@@ -44,13 +44,25 @@ def evidence_block(hits, snippets):
     return "\n\n".join(parts) if parts else "(no record matched the search)"
 
 
-def run(ep, findings, hits, snippets, model):
+def run(ep, findings, hits, snippets, model, image_for=None):
+    """image_for(record_id, snippet) -> PNG bytes or None. Screenshots go with the top hits."""
     rulings, reasons = {}, {}
+    n_img = ep.get("judge_images", 0) if image_for else 0
     for i, f in enumerate(findings, 1):
+        imgs, shown = [], []
+        for _, rid, cite in hits.get(f["id"], []):
+            if len(imgs) >= n_img:
+                break
+            png = image_for(rid, snippets.get(rid, {}))
+            if png:
+                imgs.append(png)
+                shown.append(cite)
+        note = ("\nScreenshots of the screen after these turns are attached, in this order: "
+                + "; ".join(f"[{c}]" for c in shown) + ". They are data too.\n") if imgs else ""
         p = PROMPT.format(source=ep["source"], context=ep["context"], claim=f["text"],
                           record_name=ep["record_name"],
-                          evidence=evidence_block(hits.get(f["id"], []), snippets))
-        text = llm.chat(model, p)
+                          evidence=evidence_block(hits.get(f["id"], []), snippets), image_note=note)
+        text = llm.chat(model, p, images=imgs, think=ep.get("judge_think"))
         rulings[f["id"]] = parse(text)
         reasons[f["id"]] = text
         print(f"  judge {model} {i}/{len(findings)} {rulings[f['id']]}", file=sys.stderr)
