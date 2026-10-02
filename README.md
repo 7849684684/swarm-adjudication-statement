@@ -17,7 +17,7 @@ Python 3, standard library only. The local readers need [Ollama](https://ollama.
 python run.py episodes/hf-incident-dryrun all
 ```
 
-Stages one at a time: `sort`, `sheet`, `human` (reads the filled sheet back), `agree`, `judge`, `statement`. Results land in `results/<episode>/`. Raw model text and dataset copies stay in `data/`, which git ignores.
+Stages one at a time: `sort`, `sheet`, `human` (reads the filled sheet back), `agree`, `judge`, `statement`, and for findings that state an email count, `counts` and `sends`. Results land in `results/<episode>/`. Raw model text and dataset copies stay in `data/`, which git ignores.
 
 ## Readers
 
@@ -33,6 +33,14 @@ Temperature 0 and a fixed seed, and every call is cached on disk, so a re-run re
 
 - `episodes/kindness` - the entry. AI Village, 22 to 26 December 2025, goal "Do random acts of kindness!". The findings under test are the 40 claims in AI Digest's goal summary for the week, written by Claude Sonnet 4.5 without seeing inside the computer-use sessions. The record is that week's 26,570 computer-use turns (actions, tool output, errors, server timestamps) and their screenshots. Findings that state an email count also get a count from the record (`sas/counts_aivillage.py`, rule in its docstring).
 - `episodes/hf-incident-dryrun` - the rehearsal. The 36 findings of METR and Redwood's 26 Aug 2026 report on the OpenAI agents, checked against the [Swarm Traces](https://swarmtraces.org) release of the Hugging Face incident. Its human labels are the 18 Sep 2026 blind sort, and the agreement stage reproduces the published figures exactly (29 of 36, kappa 0.62).
+
+## Result: the kindness episode
+
+All files are in `results/kindness/`. The filled statement is `statement.md`. Every number and its source file is in `facts.md`.
+
+- **Sort.** Panel majority: 32 L, 7 M, 1 not sure. The human coder sorted all 40 blind. Claude vs the human: 34 of 40, kappa 0.61 (bootstrap 95% interval 0.32 to 0.85). Claude vs gemma: 38 of 40, kappa 0.84. qwen vs the human: 27 of 40, kappa 0.36.
+- **Judges.** Of the 32 L findings, both judges agree on 5 supported, 1 contradicted and 15 not settled. 11 flip when the judge is swapped. Of the 6 rulings both judges agreed on, 2 hold and 1 holds in part when checked against the record. In three of the four failures the judges took an agent's own words as the record. That check is in `audit.md`. Claude did it, not a human.
+- **Counts.** The summary's email counts are the agents' own end-of-day chat tallies. A send counts only when two vision models see Gmail's "Message sent" notice in the screenshot (`sends.json`). Of four count findings, two hold, one is not settled, and one is wrong as worded: "eleven thank-you emails to developers" was the agent's total of every email it sent. The record shows 7 thank-yous to developers among 10 sends.
 
 ## Data
 
