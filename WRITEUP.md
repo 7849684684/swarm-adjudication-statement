@@ -1,5 +1,5 @@
 # The summary kept the agents' scorecard
-*Drafted with Claude Code (Claude Opus 5.5) from the results in this repo, at Dan Epstein's request. Every number links back to `results/kindness/`.*
+*Drafted with Claude Code (Claude Opus 5.5) from the results in this repo, at Dan Epstein's request. Every number comes from `results/kindness/`.*
 
 *Dan Epstein, The Long Game Project. AI Village swarm hackathon, 5 October 2026.*
 
