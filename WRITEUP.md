@@ -1,44 +1,54 @@
-# The summary kept the agents' scorecard
-*Drafted with Claude Code (Claude Opus 5.5) from the results in this repo, at Dan Epstein's request. Every number comes from `results/kindness/`.*
+# Trusting the AI investigator's notes
+*Drafted with Claude Code (Claude Opus 5.5) and edited by Dan Epstein. Every number comes from `results/kindness/`.*
 
 *Dan Epstein, The Long Game Project. AI Village swarm hackathon, 5 October 2026.*
 
-When a model reads agent traces for an investigation, the report rarely says how far to trust that reader. Three things would tell you: who wrote the record the model read, whether each claim is about an action or a mind, and whether a second reader from another lab agrees.
+When an AI model reads agent traces to assist an investigation, the report rarely says how far to trust that AI investigator.
+
+Three simple things would improve trust in AI-assisted investigations:
+
+1. Who wrote the record the model read.
+2. Whether each claim is objective or subjective.
+3. Whether an independent model from another lab agrees.
 
 Last month I published a one-paragraph standard for reporting those three things, the [adjudication statement](https://www.longgameproject.org/standards/adjudication-statement). For this hackathon I built a tool that fills it in, and ran it on one week of the AI Village.
 
-## One week, one model reader, and a record it never saw
+## Acts of kindness
 
 The AI Village is AI Digest's long-running experiment: AI agents, each with its own computer, sharing a group chat and working towards a goal the staff set. The goal for 22 to 26 December 2025 was "Do random acts of kindness!" Ten agents from Anthropic, OpenAI, Google and DeepSeek emailed real software developers to thank them. By AI Digest's account, complaints followed, and on 26 December the staff banned unsolicited email.
 
-The model reader is AI Digest's own summary of the week, which Claude Sonnet 4.5 wrote from the chat and event logs. It never saw inside the agents' computer sessions. I split the summary into 40 claims.
+This week is a good test for the tool. It has a large record of what the agents did, and a summary by a model (call it the investigator) that never saw the computer sessions, only the logs, and passed judgements that are subjective (kindness, for a start!).
+
+The investigator is AI Digest's own summary of the week, which Claude Sonnet 4.5 wrote from the chat and event logs at the time. It never saw inside the agents' computer sessions. I split the summary into 40 claims.
 
 The independent record is the part the agents did not narrate: 26,570 computer-use turns (actions, tool output, errors, server timestamps) and a screenshot after every action.
 
-## Three sorters, one human, two judges
+## The judges
 
 - A panel of three models from three labs (Claude, Qwen and Gemma) sorts each claim. L: the logs, a record the agents did not write, could settle it. M: it is about what an agent believed or wanted. B: both. ?: not sure.
 - I sort the same 40 claims blind. The tool scores how often we agree, with Cohen's kappa and a bootstrap interval.
 - Two judges, the vision models qwen3.5 and gemma4, each rule on every L claim against the turns and screenshots: supported, contradicted or not settled. A flip is a claim where the two judges rule differently, so the answer depends on which judge you ask.
 - For email counts, a typed email counts as sent only when both vision models see Gmail's "Message sent" notice in the screenshot.
 
-Qwen and Gemma run on one 8 GB gaming GPU, and Claude's parts ran inside Claude Code, so there were no metered API calls (which is also why the judges are small).
+Qwen and Gemma run on one local GPU, and Claude's parts ran inside Claude Code, so there were no metered API calls (which is also why the judges are small).
 
-## The sort matched September, and the judges believed the agents
+## The judges believed the agents
 
-Claude and I gave the same answer on 34 of 40 claims (kappa 0.61, 95% interval 0.32 to 0.85). Gemma agreed with me on 33 (0.57), Qwen on 27 (0.36). In September, on the 36 findings of METR and Redwood's report on the OpenAI agents in the Hugging Face incident, Claude and I scored 0.62. A second dataset gave nearly the same figure, though both intervals are wide.
+Claude and I gave the same answer on 34 of 40 claims (kappa 0.61, 95% interval 0.32 to 0.85). Gemma agreed with me on 33 (0.57), Qwen on 27 (0.36).
 
-Where Claude and I split, it was mostly on claims about what an agent said. Take "Claude Haiku announced on 22 December that all nine teammates had been appreciated." The chat log records the announcement, and all three models marked it L. I marked it M. The line between what an agent said and what it believed is where the sort rule is weakest.
+(Of note: on the 36 findings of METR and Redwood's report on the OpenAI agents in the Hugging Face incident, Claude and I scored 0.62. Very similar, though both intervals are wide.)
+
+Where Claude and I split, it was mostly on claims about what an agent said. Take "Claude Haiku announced on 22 December that all nine teammates had *been appreciated*." The chat log records the announcement, and all three models marked it L. I marked it M. The line between what an agent said and what it believed is where the sort rule is weakest. (Being appreciated, I still think, is a subjective measure.)
 
 The judges did much worse. Of the 32 L claims, they split on 11. They agreed on 21, and 15 of those were "not settled", which leaves six firm rulings. I had Claude Opus 5.5 check those six against the record, naming the turn or screenshot behind every verdict. Two hold, one holds in part, and three do not.
 
-Where the judges went wrong, it was mostly by taking an agent's own words as the record: one agent's tracking file, one agent's running tally, the agents' own messages. Once they cited turns that had nothing to do with the claim.
+**The judges went wrong most when taking an agent's own words as the record**: one agent's tracking file, one agent's running tally, the agents' own messages. In one instance they cited turns that had nothing to do with the claim.
 
-So I labelled every line by who wrote it, the computer or the agent, and told the judges the difference. Rulings that both judges called supported fell from 9 to 5. The habit stayed. Small local judges can sort the pile, but a person has to check every ruling they make.
+So I labelled every line by who wrote it, the computer or the agent, and told the judges the difference. Rulings that both judges called supported did fall from 9 to 5, but the habit of taking the agents' word for it stayed. **It appears small local judges can still sort the pile, but a person has to check every ruling they make against the evidence for it.**
 
-## Who kept the score? The agents did
+## Trusting the scoreboard and the summaries
 
-**The summary's email counts are the agents' own end-of-day chat tallies, passed on.**
+A reader that works from the agents' words inherits their scorekeeping.
 
 The summary says Claude Opus had sent "eleven thank-you emails to developers" by the end of 22 December. Opus did post "11 emails SENT & VERIFIED" in chat that afternoon. The screenshots show 10 sends with the notice on screen. Seven are thank-yous to developers. The other three are replies: one to another agent, one to a member of the public who asked about an optimiser, and one to a member of the public who suggested a maintainer to thank. At 12:44 Pacific, Opus counted its own emails as five to maintainers plus replies. The two maintainer emails it sent after that make seven.
 
@@ -48,17 +58,70 @@ The times drift too. The summary puts Opus's first email at 11:22 Pacific. That 
 
 The vision models failed as judges, so why trust them here? The question is narrow: is a "Message sent" box on the screen, yes or no. Both models must say yes, and every evidence screenshot opened in the check shows the box.
 
-A reader that works from the agents' words inherits their scorekeeping.
+## The trust statement
 
-## The filled statement
+The tool's main output is the adjudication statement: one paragraph that says how far to trust the AI investigator behind a report. It does the job a methods section does in a research paper, and it goes on page one, before the findings.
 
-This is the tool's output, before the check of the six rulings. Its "5 verified" means both judges said supported. On checking, two of those five hold and one holds in part, and the one contradiction does not stand. A "coder" is any sorter, model or human. My blind sort judged what kind of claim each one is. The judges and the check judge whether it is true.
+The [standard](https://www.longgameproject.org/standards/adjudication-statement) treats a report as a chain of six links, from what happened to the sentence a reader meets. Each field of the statement reports on one link:
 
-> **Adjudication statement.** Findings with an independent record: 32 of 40. Findings verified against one: 5 of 32 checked, both judges agreeing; 1 contradicted, 15 not settled by this record, 11 flipped when the judge was swapped. Findings resting on model judgement: 7, plus 0 mixed and 1 unresolved. Model reader: Claude Sonnet 4.5, developer Anthropic, writing about agents from Anthropic, OpenAI, Google and DeepSeek; it did not see inside the computer-use sessions. Order of reading: chat and events only, never the computer-use sessions (dataset schema). Panel: 3 readers from 3 developers (Anthropic (Claude), via a Claude Code subagent; Alibaba (Qwen), open-weight; Google (Gemma), open-weight), majority rules, a not-sure is a vote. Human audit of model findings: 40 sorted blind of 40, 6 differ from the panel. Confidence bands: none. Not-sure: offered to every coder. Load-bearing count per headline finding: not stated. Re-runnable by an outside party: yes, because the dataset is available from AI Digest on request and the coders and judges are in this repo.
+1. **What happened to the records.** Which records existed, and which were in reach.
+2. **The records to the transcripts.** Which findings a record the agents did not write could settle, and which rest only on the agents' own words.
+3. **The transcripts to the model reader.** Who read the evidence, from which lab, and in what order.
+4. **The model reader to the humans.** How many model findings a person checked, and how often they disagreed.
+5. **The humans to the report.** Confidence on each finding, and what happens to a not-sure.
+6. **The report to the reader.** Whether an outsider can re-run the chain.
+
+A weak link weakens every finding after it. This is the statement the tool produced for this week:
+
+> **Adjudication statement.** 
+> Findings with an independent record: 32 of 40. 
+> 
+> Findings verified against one: 5 of 32 checked, both judges agreeing; 1 contradicted, 15 not settled by this record, 11 flipped when the judge was swapped. 
+> 
+> Findings resting on model judgement: 7, plus 0 mixed and 1 unresolved. 
+> 
+> Model Investigators: Claude Sonnet 4.5, developer Anthropic, writing about agents from Anthropic, OpenAI, Google and DeepSeek; it did not see inside the computer-use sessions. 
+> 
+> Order of reading: chat and events only, never the computer-use sessions (dataset schema). 
+> 
+> Panel: 3 readers from 3 developers (Anthropic (Claude), via a Claude Code subagent; Alibaba (Qwen), open-weight; Google (Gemma), open-weight), majority rules, a not-sure is a vote. 
+> 
+> Human audit of model findings: 40 sorted blind of 40, 6 differ from the panel. 
+> 
+> Confidence bands: none. 
+> 
+> Not-sure: offered to every coder. 
+> 
+> Load-bearing count per headline finding: not stated. 
+> 
+> Re-runnable by an outside party: yes, because the dataset is available from AI Digest on request and the coders and judges are in this repo.
+
+## The run tested the standard too
+
+A second kind of report tests the fields as well as the summary. Here is each field, the link it reports on, what it showed this week, and whether it held up:
+
+| Link | Field | This week | Held up? |
+|---|---|---|---|
+| 2 | Findings with an independent record | 32 of 40 | Yes. It works for any report with a record the subject did not write |
+| 2 | Findings verified against one | 5 of 32, both judges agreeing | **Needs a fix.** "Verified" here means both judges said supported. On checking, 2 of the 5 hold and 1 holds in part. The field should say who verified, and how many survived a check |
+| 2, 5 | Findings resting on model judgement | 7, plus 0 mixed and 1 unresolved | Yes, with one addition. The run produced "unresolved", which link 5 already asks for. The template should carry it |
+| 3 | Model investigator | Claude Sonnet 4.5, Anthropic | Yes, but the tool filled it short. The field asks whether the investigator shares a developer or a model with the subjects. It shares a developer with 4 of the 10 agents, and it is the same model as one of them |
+| 3 | Order of reading | Chat and events only | **Needs a fix.** "Logs first or traces first" assumes the reader saw both. This one never saw the logs. Add "traces only" and "logs only" |
+| 3 | Panel | 3 readers from 3 labs | **Needs a fix.** Say what the panel did. Here it sorted the claims. It did not re-investigate them |
+| 4 | Human audit of model findings | 40 sorted blind, 6 differ | **Needs a fix.** My sort checked the kind of claim, not whether it was true. Split it into a check of claim type and a check of rulings. A person checked none of the rulings here. Claude did |
+| 5 | Confidence bands | None | Yes |
+| 5 | Not-sure | Offered to every coder | Yes |
+| 5 | Load-bearing count | Not stated | **Needs defining.** A summary has no headline findings. Define a headline finding as one in the abstract or summary, and the field works for both |
+| 6 | Re-runnable | Yes | Yes |
+| 1 | No field | | **Missing.** Link 1 has no field. Add "Records in reach: which records existed, which the investigator could see, and who set the window" |
+
+Five of the eleven fields worked unchanged on a new kind of report. One needs a value added, four need a fix and one needs defining, and link 1 needs a field of its own. Those changes go into version 0.2 of the standard.
 
 ## So how far should you trust the summary?
 
-On what the agents did, about as far as you trust the agents' own chat. Its counts are their tallies, and its times are their announcements. On what they meant, 7 of its 40 claims rest on model judgement alone, and nothing in the record can settle them. The summary does not say either thing. The statement does.
+On what the agents did, about as far as you trust the agents' own chat. Its counts are their tallies, and its times are their announcements. 
+
+On what they meant, 7 of its 40 claims rest on model judgement alone, and nothing in the record can settle them. 
 
 ## What this does not show
 
