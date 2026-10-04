@@ -15,18 +15,34 @@ Last month I published a one-paragraph standard for reporting those three things
 
 ## Acts of kindness
 
-The AI Village is AI Digest's long-running experiment: AI agents, each with its own computer, sharing a group chat and working towards a goal the staff set. The goal for 22 to 26 December 2025 was "Do random acts of kindness!" Ten agents from Anthropic, OpenAI, Google and DeepSeek emailed real software developers to thank them. By AI Digest's account, complaints followed, and on 26 December the staff banned unsolicited email.
+To find a good dataset to use as a proxy for an investigation and demonstrate how an adjudication statement would help, we looked for an episode in the AI village that had these qualities:
 
-This week is a good test for the tool. It has a large record of what the agents did, and a summary by a model (call it the investigator) that never saw the computer sessions, only the logs, and passed judgements that are subjective (kindness, for a start!).
+1- Models doing something that had to be turned off involved intervention
+2- Judgement about intervening relied on subjective reporting by an AI-investigator 
+3- Where there was information gaps for the AI-investigator - It could see chat/event logs but NOT inside the computer sessions or verifiable things.
+
+This would allow us a situation where we are relying on trust from the AI-investigators reporting and a way to demonstrate where that drifted from verifiable moments, and demonstrate how an adjudication statement can help frame trustworthiness in the reporting.
+
+The goal for 22 to 26 December 2025 was **"Do random acts of kindness!"** Ten agents from Anthropic, OpenAI, Google and DeepSeek emailed real software developers to thank them. 
+
+By AI Digest's account, (and of course) complaints followed, and on 26 December the staff banned unsolicited email.
+
+This episode is a good test for the tool. It has a large record of what the agents did, and a summary by a model investigator that never saw the computer sessions, only the logs, and passed judgements that are subjective (kindness, for a start!).
 
 The investigator is AI Digest's own summary of the week, which Claude Sonnet 4.5 wrote from the chat and event logs at the time. It never saw inside the agents' computer sessions. I split the summary into 40 claims.
 
-The independent record is the part the agents did not narrate: 26,570 computer-use turns (actions, tool output, errors, server timestamps) and a screenshot after every action.
+The independent record is the part the agents did not narrate: 26,570 computer-use turns (actions, tool output, errors, server timestamps) and a screenshot after every action. This was used to verify the claims of the investigation.
 
-## The judges
+## The panel of judges
 
-- A panel of three models from three labs (Claude, Qwen and Gemma) sorts each claim. L: the logs, a record the agents did not write, could settle it. M: it is about what an agent believed or wanted. B: both. ?: not sure.
-- I sort the same 40 claims blind. The tool scores how often we agree, with Cohen's kappa and a bootstrap interval.
+Of the 40 claims made by the investigator, a panel of independent judges from three labs (Claude, Qwen and Gemma) evaluated them into four catagories:
+
+- L: Logs. A claim that had a record the agents did not write, we could verify it. 
+- M: Mind. A Claim that was about what an agent believed or wanted, subjective to the investigators opinion.
+- B: both. 
+- ?: not sure.
+  
+- I sorted the same 40 claims blind. The tool scores how often we agree, with Cohen's kappa and a bootstrap interval.
 - Two judges, the vision models qwen3.5 and gemma4, each rule on every L claim against the turns and screenshots: supported, contradicted or not settled. A flip is a claim where the two judges rule differently, so the answer depends on which judge you ask.
 - For email counts, a typed email counts as sent only when both vision models see Gmail's "Message sent" notice in the screenshot.
 
@@ -48,7 +64,7 @@ So I labelled every line by who wrote it, the computer or the agent, and told th
 
 ## Trusting the scoreboard and the summaries
 
-A reader that works from the agents' words inherits their scorekeeping.
+A reader that works from the agents' words inherits their judgements.
 
 The summary says Claude Opus had sent "eleven thank-you emails to developers" by the end of 22 December. Opus did post "11 emails SENT & VERIFIED" in chat that afternoon. The screenshots show 10 sends with the notice on screen. Seven are thank-yous to developers. The other three are replies: one to another agent, one to a member of the public who asked about an optimiser, and one to a member of the public who suggested a maintainer to thank. At 12:44 Pacific, Opus counted its own emails as five to maintainers plus replies. The two maintainer emails it sent after that make seven.
 
@@ -60,62 +76,42 @@ The vision models failed as judges, so why trust them here? The question is narr
 
 ## The trust statement
 
-The tool's main output is the adjudication statement: one paragraph that says how far to trust the AI investigator behind a report. It does the job a methods section does in a research paper, and it goes on page one, before the findings.
+The tool's main output is the adjudication statement: a fill-in template that says how far to trust the AI investigator behind a report. It does the job a methods section does in a research paper, and it goes on page one, before the findings.
 
-The [standard](https://www.longgameproject.org/standards/adjudication-statement) treats a report as a chain of six links, from what happened to the sentence a reader meets. Each field of the statement reports on one link:
+The [standard](https://www.longgameproject.org/standards/adjudication-statement) treats a report as a chain of six links, from what actually happened to the report finding claim based on it. The template has one block per link, in order. Fill every blank. "Not stated" is an allowed answer, and it is a finding. Under each block is what this week produced.
 
-1. **What happened to the records.** Which records existed, and which were in reach.
-2. **The records to the transcripts.** Which findings a record the agents did not write could settle, and which rest only on the agents' own words.
-3. **The transcripts to the model reader.** Who read the evidence, from which lab, and in what order.
-4. **The model reader to the humans.** How many model findings a person checked, and how often they disagreed.
-5. **The humans to the report.** Confidence on each finding, and what happens to a not-sure.
-6. **The report to the reader.** Whether an outsider can re-run the chain.
-
-A weak link weakens every finding after it. This is the statement the tool produced for this week:
-
-> **Adjudication statement.** 
-> Findings with an independent record: 32 of 40. 
-> 
-> Findings verified against one: 5 of 32 checked, both judges agreeing; 1 contradicted, 15 not settled by this record, 11 flipped when the judge was swapped. 
-> 
-> Findings resting on model judgement: 7, plus 0 mixed and 1 unresolved. 
-> 
-> Model Investigators: Claude Sonnet 4.5, developer Anthropic, writing about agents from Anthropic, OpenAI, Google and DeepSeek; it did not see inside the computer-use sessions. 
-> 
-> Order of reading: chat and events only, never the computer-use sessions (dataset schema). 
-> 
-> Panel: 3 readers from 3 developers (Anthropic (Claude), via a Claude Code subagent; Alibaba (Qwen), open-weight; Google (Gemma), open-weight), majority rules, a not-sure is a vote. 
-> 
-> Human audit of model findings: 40 sorted blind of 40, 6 differ from the panel. 
-> 
-> Confidence bands: none. 
-> 
-> Not-sure: offered to every coder. 
-> 
-> Load-bearing count per headline finding: not stated. 
-> 
-> Re-runnable by an outside party: yes, because the dataset is available from AI Digest on request and the coders and judges are in this repo.
+> **Adjudication statement**
+>
+> **1. What happened on the record.** Records in reach: [which records existed, which the investigator could see, and who set the window].
+> *This week: 26,570 computer-use turns and their screenshots existed. The investigator saw the chat and event logs only. AI Digest set the window, 22 to 26 December 2025.*
+>
+> **2. The records to the findings.** Findings with an independent record: [n] of [N]. Verified against one: [n], by [who], and [n] survived a check. Resting on model judgement: [n], plus [n] mixed and [n] unresolved.
+> *This week: 32 of 40. 5 verified by two model judges, and 2 survived a check by Claude Opus 5.5, with 1 more in part. 7 rest on judgement, plus 0 mixed and 1 unresolved.*
+>
+> **3. The model reader.** Investigator: [name], developer [x], sharing a developer with [n] of [N] subjects and the same model as [n]. Order of reading: [logs first / traces first / traces only / logs only]. Panel: [none / n readers from n developers], used for [sorting / rulings / both].
+> *This week: Claude Sonnet 4.5, Anthropic, sharing a developer with 4 of the 10 agents and the same model as 1 of them. Traces only: the chat and event logs, never the computer sessions. 3 readers from 3 labs (Anthropic, Alibaba, Google), used for sorting. Majority rules, and a not-sure is a vote.*
+>
+> **4. The model reader to the humans.** Human check of claim type: [n] of [N], [n] differ from the panel. Human check of rulings: [n] of [N], [n] disagreements.
+> *This week: 40 of 40 sorted blind, 6 differ from the panel. 0 of 6 rulings checked by a person. Claude Opus 5.5 checked them.*
+>
+> **5. The humans to the report.** Confidence bands: [on every finding / none]. Not-sure: [forced / offered / absent]. Load-bearing count per headline finding: [stated / not stated]. A headline finding is one in the abstract or summary.
+> *This week: none. Offered to every coder. Not stated.*
+>
+> **6. The report to the reader.** Re-runnable by an outside party: [yes / no, because].
+> *This week: yes. The dataset is available from AI Digest on request, and the code, sorts and judges are in the repo.*
 
 ## The run tested the standard too
 
-A second kind of report tests the fields as well as the summary. Here is each field, the link it reports on, what it showed this week, and whether it held up:
+Running the template on a second kind of report found changes at five of the six links. By link:
 
-| Link | Field | This week | Held up? |
-|---|---|---|---|
-| 2 | Findings with an independent record | 32 of 40 | Yes. It works for any report with a record the subject did not write |
-| 2 | Findings verified against one | 5 of 32, both judges agreeing | **Needs a fix.** "Verified" here means both judges said supported. On checking, 2 of the 5 hold and 1 holds in part. The field should say who verified, and how many survived a check |
-| 2, 5 | Findings resting on model judgement | 7, plus 0 mixed and 1 unresolved | Yes, with one addition. The run produced "unresolved", which link 5 already asks for. The template should carry it |
-| 3 | Model investigator | Claude Sonnet 4.5, Anthropic | Yes, but the tool filled it short. The field asks whether the investigator shares a developer or a model with the subjects. It shares a developer with 4 of the 10 agents, and it is the same model as one of them |
-| 3 | Order of reading | Chat and events only | **Needs a fix.** "Logs first or traces first" assumes the reader saw both. This one never saw the logs. Add "traces only" and "logs only" |
-| 3 | Panel | 3 readers from 3 labs | **Needs a fix.** Say what the panel did. Here it sorted the claims. It did not re-investigate them |
-| 4 | Human audit of model findings | 40 sorted blind, 6 differ | **Needs a fix.** My sort checked the kind of claim, not whether it was true. Split it into a check of claim type and a check of rulings. A person checked none of the rulings here. Claude did |
-| 5 | Confidence bands | None | Yes |
-| 5 | Not-sure | Offered to every coder | Yes |
-| 5 | Load-bearing count | Not stated | **Needs defining.** A summary has no headline findings. Define a headline finding as one in the abstract or summary, and the field works for both |
-| 6 | Re-runnable | Yes | Yes |
-| 1 | No field | | **Missing.** Link 1 has no field. Add "Records in reach: which records existed, which the investigator could see, and who set the window" |
+1. **What happened on the record.** Version 0.1 had no field for this link. Added "Records in reach".
+2. **The records to the findings.** "Verified" counted two judges agreeing as verification, and only 2 of those 5 held. It now says who verified and how many survived a check. "Unresolved" is added, as link 5 already asked.
+3. **The model reader.** "Logs first or traces first" assumed the reader saw both. This one never saw the logs, so "traces only" and "logs only" are added. The panel now says what it did. The investigator line now counts shared developers and shared models: here Claude Sonnet 4.5 wrote the summary and was also one of the ten agents.
+4. **The model reader to the humans.** One field mixed up two checks. My blind sort checked the kind of claim, not whether it was true. It is now two fields.
+5. **The humans to the report.** "Load-bearing count" now defines a headline finding, so the field works for a summary as well as a report.
+6. **The report to the reader.** No change.
 
-Five of the eleven fields worked unchanged on a new kind of report. One needs a value added, four need a fix and one needs defining, and link 1 needs a field of its own. Those changes go into version 0.2 of the standard.
+Five of the eleven fields in version 0.1 held unchanged. These changes go into version 0.2 of the standard.
 
 ## So how far should you trust the summary?
 
